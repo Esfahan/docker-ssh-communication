@@ -1,0 +1,22 @@
+---
+version: '3'
+services:
+  ssh_from:
+    container_name: ssh_from
+    build:
+      context: ./
+      dockerfile: ./from/Dockerfile
+    volumes:
+      - ./from/code:/code
+    tty: true
+
+  ssh_to:
+    container_name: ssh_to
+    build:
+      context: ./
+      dockerfile: ./to/Dockerfile
+    volumes:
+      - ./to/code:/code
+    tty: true
+    command: /sbin/init
+    privileged: true

@@ -1,0 +1,4 @@
+#!/bin/bash
+CURRENT_DIR=$(dirname $0)
+
+ssh-keygen -f ${CURRENT_DIR}/../secrets/id_rsa -t rsa -b 4096 -C 'example@com' -N ''

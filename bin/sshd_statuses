@@ -1,0 +1,9 @@
+#!/bin/bash
+
+HOSTNAMES=( ssh_to )
+
+for HOSTNAME in "${HOSTNAMES[@]}"
+do
+  echo -e "\e[33m[${HOSTNAME}]\e[m"
+  sudo docker exec -it $(sudo docker ps -aqf "name=${HOSTNAME}") /bin/bash -c 'systemctl status sshd'
+done

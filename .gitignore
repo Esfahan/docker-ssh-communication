@@ -1,0 +1,4 @@
+*.swp
+*~
+secrets/*
+!secrets/.keep
