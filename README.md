@@ -21,9 +21,16 @@ Check the process with below command.
 $ ./bin/sshd_statuses
 ```
 
+## Test
 ### ssh connection
 You can connect to the container with the own name.
 
 ```bash
 $ sudo docker exec -it ssh_from /bin/bash -c 'ssh ssh_to'
+```
+
+### rsync
+
+```bash
+$ sudo docker exec -it ssh_from /bin/bash -c 'rsync -ra --omit-dir-times /code/data ssh_to:/code/ -v'
 ```

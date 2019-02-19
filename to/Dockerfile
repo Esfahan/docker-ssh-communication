@@ -1,6 +1,7 @@
 From centos:7
 
-RUN yum -y install openssh-server
+RUN yum -y install openssh-server \
+                   rsync
 
 RUN mkdir ~/.ssh && chmod 700 ~/.ssh
 COPY ./secrets/id_rsa.pub /root/.ssh/authorized_keys
